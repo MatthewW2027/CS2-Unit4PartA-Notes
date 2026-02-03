@@ -39,5 +39,32 @@ public class Main {
       System.out.println(table[finalIndex]); // table[2] => "kyanni"
       System.out.println(table[table.length - 1]); // same as above 
 
+      // *** 4.4: TRAVERSING ARRAYS *** 
+      double[] scores = {100.0, 100.0, 100.0, 91.54};
+      // look at one item using index 
+      System.out.println(scores[1]);
+      // use a STANDARD FOR LOOP to iterate through EVERY item 
+      for (int i = 0; i < 4; i++) {
+         System.out.println("Current item: " + scores[i]); 
+      }
+      // instead of picking the nedpoint with a number like 4, what if we just use the arrays length?
+      for (int i = 0; i < scores.length; i++) {
+         System.out.println("Score before curve: " + scores[i]);
+         // "curve the test scores" -> modify array items 
+         scores[i] = scores[i] + 10; 
+         System.out.println("score after curve" + scores[i]); 
+      }
+
+      // SHORTCUT if you only want to "visit" items not modify 
+      // use an ENHANCED FOR-EACH loop
+      double sum = 0; 
+      // "for each individual score in the array of scores"
+      for (double score : scores) {
+         // don't need [] brackets index is not relevant here 
+         sum += score; // add current item to the sum 
+      }
+      System.out.println(sum); 
+      double avg = sum / scores.length; 
+      System.out.println(avg);
    } // end main METHOD 
 } // END Main CLASS 
